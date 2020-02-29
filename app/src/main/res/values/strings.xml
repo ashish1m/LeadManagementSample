@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">LeadManagementSample</string>
+    <string name="created_on">Created on: </string>
+    <string name="pending">Pending</string>
+    <string name="approved">Approved</string>
+    <string name="rejected">Rejected</string>
 </resources>
