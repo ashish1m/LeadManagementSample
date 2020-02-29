@@ -2,6 +2,8 @@ package com.example.leadmanagementsample;
 
 import android.app.Application;
 
+import com.example.leadmanagementsample.repository.db.DealRoomDatabase;
+
 public class LeadManagement extends Application {
 
     private static LeadManagement mInstance;
@@ -17,6 +19,10 @@ public class LeadManagement extends Application {
 
         mInstance = this;
         mAppExecutor = new AppExecutor();
+    }
+
+    public DealRoomDatabase getDatabase() {
+        return DealRoomDatabase.getDatabase(this);
     }
 
     public AppExecutor getAppExecutor() {
