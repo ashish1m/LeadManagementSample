@@ -1,8 +1,10 @@
-package com.example.leadmanagementsample;
+package com.example.leadmanagementsample.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.leadmanagementsample.R;
 
 public class MainActivity extends AppCompatActivity {
 
