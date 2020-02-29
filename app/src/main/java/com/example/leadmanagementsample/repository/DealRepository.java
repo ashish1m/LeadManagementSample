@@ -39,7 +39,7 @@ public class DealRepository {
         return mAllDeals;
     }
 
-    public void insertDeal(final Deal deal) {
+    public void insert(final Deal deal) {
         LeadManagement.getInstance()
                 .getAppExecutor()
                 .diskIO()

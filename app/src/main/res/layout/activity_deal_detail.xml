@@ -6,4 +6,143 @@
     android:layout_height="match_parent"
     tools:context=".ui.deal_detail.DealDetailActivity">
 
+    <TextView
+        android:id="@+id/tv_dealName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:text="Deal Name"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="RtlCompat" />
+
+    <TextView
+        android:id="@+id/tv_createdOn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/created_on"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@id/tv_dealName"
+        app:layout_constraintTop_toBottomOf="@id/tv_dealName"
+        tools:ignore="RtlCompat" />
+
+
+    <TextView
+        android:id="@+id/tv_status"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/bg_status_selector"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="Status"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_createdOn"
+        tools:ignore="RtlCompat" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_percent="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_percent="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_sales"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Sales:"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@id/tv_dealName"
+        app:layout_constraintTop_toBottomOf="@id/guideline_horizontal" />
+
+
+    <RadioGroup
+        android:id="@+id/rg_statusSales"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="@id/tv_dealName"
+        app:layout_constraintTop_toBottomOf="@id/tv_sales">
+
+        <RadioButton
+            android:id="@+id/rb_approveSales"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Approve" />
+
+        <RadioButton
+            android:id="@+id/rb_rejectSales"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reject" />
+
+    </RadioGroup>
+
+
+    <TextView
+        android:id="@+id/tv_finance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="Finance:"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@id/guideline_vertical"
+        app:layout_constraintTop_toTopOf="@id/tv_sales"
+        tools:ignore="RtlCompat" />
+
+
+    <RadioGroup
+        android:id="@+id/rg_statusFinance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="@id/tv_finance"
+        app:layout_constraintTop_toBottomOf="@id/tv_sales">
+
+        <RadioButton
+            android:id="@+id/rb_approveFinance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Approve" />
+
+        <RadioButton
+            android:id="@+id/rb_rejectFinance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reject" />
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btn_save"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:background="@drawable/bg_save_button"
+        android:text="Save"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

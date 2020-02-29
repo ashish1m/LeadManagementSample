@@ -46,7 +46,7 @@ public class DealListAdapter extends RecyclerView.Adapter<DealListAdapter.ViewHo
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Deal deal = mDealList.get(position);
         holder.mDealNameTv.setText(deal.getDealName());
-        String time = mInflater.getContext().getString(R.string.pending)
+        String time = mInflater.getContext().getString(R.string.created_on)
                 + Utils.getFormattedDate(deal.getTime());
         holder.mCreatedOnTv.setText(time);
 

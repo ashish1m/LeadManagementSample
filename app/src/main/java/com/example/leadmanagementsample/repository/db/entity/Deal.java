@@ -21,12 +21,22 @@ public class Deal {
     @TypeConverters(StatusConverter.class)
     private Status status;
 
+    @ColumnInfo(name = "statusSales")
+    @TypeConverters(StatusConverter.class)
+    private Status statusSales;
+
+    @ColumnInfo(name = "statusFinance")
+    @TypeConverters(StatusConverter.class)
+    private Status statusFinance;
+
     @ColumnInfo(name = "time")
     private long time;
 
     public Deal(String dealName) {
         this.dealName = dealName;
         this.status = Status.UNAPPROVED;
+        this.statusSales = Status.UNAPPROVED;
+        this.statusFinance = Status.UNAPPROVED;
         this.time = System.currentTimeMillis();
     }
 
@@ -60,6 +70,22 @@ public class Deal {
 
     public void setTime(long time) {
         this.time = time;
+    }
+
+    public Status getStatusSales() {
+        return statusSales;
+    }
+
+    public void setStatusSales(Status statusSales) {
+        this.statusSales = statusSales;
+    }
+
+    public Status getStatusFinance() {
+        return statusFinance;
+    }
+
+    public void setStatusFinance(Status statusFinance) {
+        this.statusFinance = statusFinance;
     }
 
     public enum Status {

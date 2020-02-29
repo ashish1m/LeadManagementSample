@@ -1,5 +1,6 @@
 package com.example.leadmanagementsample.ui.deal_list;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -11,6 +12,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.leadmanagementsample.R;
 import com.example.leadmanagementsample.repository.db.entity.Deal;
+import com.example.leadmanagementsample.ui.deal_add.DealCreateActivity;
+import com.example.leadmanagementsample.ui.deal_detail.DealDetailActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
@@ -48,23 +51,28 @@ public class DealListActivity extends AppCompatActivity implements DealListAdapt
         });
     }
 
-//    private void navigateToNoteDetailActivity(int noteId) {
-//        Intent intent = new Intent(NoteListActivity.this, NoteDetailActivity.class);
-//        intent.putExtra(NoteDetailActivity.NOTE_ID, noteId);
-//        startActivity(intent);
-//    }
+    private void navigateToAddDealActivity() {
+        Intent intent = new Intent(DealListActivity.this, DealCreateActivity.class);
+        startActivity(intent);
+    }
+
+    private void navigateToDealDetailActivity(int dealId) {
+        Intent intent = new Intent(DealListActivity.this, DealDetailActivity.class);
+        intent.putExtra(DealDetailActivity.DEAL_ID, dealId);
+        startActivity(intent);
+    }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.fab_addNote:
-//                navigateToNoteDetailActivity(-1);
+                navigateToAddDealActivity();
                 break;
         }
     }
 
     @Override
     public void onItemClick(int dealId) {
-//        navigateToNoteDetailActivity(noteId);
+        navigateToDealDetailActivity(dealId);
     }
 }
